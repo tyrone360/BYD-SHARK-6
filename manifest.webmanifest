@@ -1,0 +1,33 @@
+﻿{
+  "id": "./",
+  "name": "BYD SHARK 6 | Desert Expedition",
+  "short_name": "BYD SHARK 6",
+  "description": "Explore the BYD SHARK 6 in an interactive digital showroom.",
+  "lang": "en-ZA",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#11110f",
+  "theme_color": "#11110f",
+  "icons": [
+    {
+      "src": "_Assets/Branding/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "_Assets/Branding/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "_Assets/Branding/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
