@@ -1,0 +1,61 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".35" stop-color="#aebdca"/>
+      <stop offset=".65" stop-color="#536575"/>
+      <stop offset="1" stop-color="#e8f1f7"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#43d9ff"/>
+      <stop offset="1" stop-color="#07528c"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Angular shark badge -->
+  <path d="M300 38 L500 145 L465 390 L300 505 L135 390 L100 145 Z"
+        fill="#101b27" stroke="url(#silver)" stroke-width="12"/>
+  <path d="M300 58 L478 155 L447 375 L300 476 L153 375 L122 155 Z"
+        fill="none" stroke="url(#blue)" stroke-width="4"/>
+
+  <!-- Shark silhouette -->
+  <path d="M112 280
+           L205 244
+           L265 194
+           L302 112
+           L340 225
+           L420 215
+           L485 245
+           L432 273
+           L480 303
+           L405 319
+           L350 350
+           L285 355
+           L220 332
+           L155 315 Z"
+        fill="url(#silver)" stroke="#d9f5ff" stroke-width="4"
+        stroke-linejoin="round"/>
+  <!-- Tail -->
+  <path d="M220 332 L155 315 L112 280 L135 352 L220 332 Z"
+        fill="url(#blue)" stroke="#bdefff" stroke-width="3"/>
+  <!-- Dorsal fin highlight -->
+  <path d="M302 112 L340 225 L315 218 Z" fill="url(#blue)"/>
+  <!-- Eye -->
+  <circle cx="420" cy="251" r="7" fill="#07131f"/>
+  <!-- Gill details -->
+  <path d="M365 270 L350 310 M383 267 L370 307"
+        stroke="#344c5d" stroke-width="5" stroke-linecap="round"/>
+  <!-- Speed lines -->
+  <path d="M155 220 L220 220 M135 240 L195 240"
+        stroke="url(#blue)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Brand lettering -->
+  <text x="300" y="414" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="47"
+        font-weight="900" letter-spacing="8" fill="url(#silver)">BYD</text>
+</svg>
+

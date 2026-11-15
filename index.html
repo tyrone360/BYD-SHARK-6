@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11110f">
+    <meta name="description" content="Explore the BYD SHARK 6 in an interactive digital showroom.">
+    <title>BYD SHARK 6 | Desert Expedition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- WELCOME / CINEMATIC SWIPE ENTRANCE -->
+<section class="welcome-screen" id="welcomeScreen">
+
+    <div class="welcome-background">
+        <img src="_Assets/Advert/BYD%20Ardv.png"
+             alt="BYD SHARK 6"
+             class="welcome-vehicle">
+    </div>
+
+    <div class="welcome-overlay"></div>
+    <div class="welcome-glow"></div>
+
+    <header class="welcome-header">
+        <div class="brand">
+            <span class="brand-main">BYD</span>
+            <span class="brand-sub">SHARK 6</span>
+        </div>
+    </header>
+
+    <section class="welcome-content">
+
+        <div class="welcome-eyebrow">
+            <span></span>
+            DESERT EXPEDITION
+            <span></span>
+        </div>
+
+        <h1>
+            BUILT FOR<br>
+            <span>THE UNEXPECTED.</span>
+        </h1>
+
+        <p class="welcome-description">
+            Discover a new dimension of power, intelligence
+            and adventure. Explore the BYD SHARK 6.
+        </p>
+
+        <div class="vehicle-caption">
+            <span class="caption-line"></span>
+            <span>BYD SHARK 6 EXPERIENCE</span>
+        </div>
+
+    </section>
+
+    <footer class="welcome-footer">
+
+        <div class="swipe-instruction">
+            <span class="instruction-line"></span>
+            <span>YOUR JOURNEY STARTS NOW</span>
+            <span class="instruction-line"></span>
+        </div>
+
+        <div class="swipe-track" id="swipeTrack">
+
+            <div class="swipe-progress" id="swipeProgress"></div>
+
+            <button type="button"
+                    class="swipe-handle"
+                    id="enterButton"
+                    aria-label="Slide right to enter the BYD SHARK 6 experience">
+                <span class="handle-arrow">›</span>
+            </button>
+
+            <span class="swipe-text" id="swipeText">
+                SLIDE TO EXPLORE
+            </span>
+
+        </div>
+
+        <p class="swipe-hint">
+            Slide right to enter the showroom
+        </p>
+
+    </footer>
+
+    <div class="welcome-version">
+        BYD <span>•</span> DESERT EXPEDITION
+    </div>
+
+</section>
+
+<!-- MAIN SHOWROOM -->
+    <main id="showroom" class="showroom hidden">
+
+        <nav class="floating-dock" aria-label="Main navigation">
+
+    <a href="#home" class="dock-item active" aria-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>
+        </svg>
+        <span>Home</span>
+    </a><a href="#colours" class="dock-item" aria-label="Colours">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.5-3.3 1.8 1.8 0 0 1 1.4-3h1.1A3.8 3.8 0 0 0 21 10.9C21 6.5 17 3 12 3Z"/>
+            <circle cx="7.5" cy="10" r="1"/>
+            <circle cx="10" cy="6.8" r="1"/>
+            <circle cx="14.5" cy="7" r="1"/>
+        </svg>
+        <span>Colours</span>
+    </a>
+
+    <a href="#technology" class="dock-item" aria-label="Details">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 13.5 5 8h14l2 5.5V19h-2v-2H5v2H3z"/>
+            <path d="M5 13.5h14M7 8l1-3h8l1 3"/>
+            <circle cx="7" cy="14" r="1"/>
+            <circle cx="17" cy="14" r="1"/>
+        </svg>
+        <span>Details</span>
+    </a>
+
+    <a href="lab.html" class="dock-item" aria-label="Lab">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 3h6"/>
+            <path d="M10 3v6l-5.5 9.2A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.8L14 9V3"/>
+            <path d="M7.5 15h9"/>
+            <circle cx="10" cy="17.5" r=".7" fill="currentColor"/>
+            <circle cx="14" cy="13" r=".7" fill="currentColor"/>
+        </svg>
+        <span>Lab</span>
+    </a>
+
+    <button id="themeToggle" class="dock-theme" aria-label="Toggle light and dark theme">
+        ◐
+    </button>
+
+</nav>
+
+
+        <!-- CINEMATIC HERO -->
+        <section class="hero-section" id="home">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <p class="eyebrow">INTRODUCING THE SHARK 6</p>
+
+                <h2>POWER<br>WITHOUT<br><span>LIMITS.</span></h2>
+
+                <p>Engineered for the road less travelled.</p>
+
+                <a href="#interior" class="gold-button">
+                    DISCOVER THE SHARK 6 →
+                </a>
+            </div>
+
+            <span class="hero-caption">DESIGNED FOR ADVENTURE</span>
+        </section>
+
+
+        <!-- INTERIOR -->
+        <section class="content-section" id="interior">
+
+            <div class="section-heading">
+                <p class="eyebrow">INSIDE THE EXPERIENCE</p>
+                <h2>COMMAND<br><span>YOUR WORLD.</span></h2>
+                <p>Technology and comfort meet in a carefully
+                    designed driving environment.</p>
+            </div>
+
+            <div class="interior-gallery">
+
+                <article class="feature-card">
+                    <img src="_Assets/Interior/interior-pc.jpg"
+                        alt="BYD SHARK 6 interior">
+                    <div class="card-caption">
+                        <h3>THE DRIVER'S SPACE</h3>
+                        <p>Explore the cabin design.</p>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <img src="_Assets/Interior/Blue%20interior.jpg"
+                        alt="BYD SHARK 6 interior detail">
+                    <div class="card-caption">
+                        <h3>COMFORT MEETS TECHNOLOGY</h3>
+                        <p>Discover the interior experience.</p>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <img src="_Assets/Interior/purple%20interior.jpg"
+                        alt="BYD SHARK 6 cabin detail">
+                    <div class="card-caption">
+                        <h3>DESIGNED AROUND YOU</h3>
+                        <p>Details that define the experience.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- ADVENTURE -->
+        <section class="adventure-section" id="adventure">
+
+            <div class="section-heading">
+                <p class="eyebrow">BEYOND THE PAVEMENT</p>
+                <h2>ONE VEHICLE.<br><span>ENDLESS POSSIBILITIES.</span></h2>
+                <p>Explore the world through the SHARK 6.</p>
+            </div>
+
+            <div class="adventure-gallery">
+
+                <article class="adventure-card">
+                    <img src="_Assets/Interior/Desert.jpg"
+                        alt="Desert adventure">
+                    <h3>DESERT EXPEDITION</h3>
+                    <p>Adventure beyond the familiar.</p>
+                </article>
+
+                <article class="adventure-card">
+                    <img src="_Assets/Interior/Nature.jpg"
+                        alt="Nature adventure">
+                    <h3>EXPLORE NATURE</h3>
+                    <p>Discover a different perspective.</p>
+                </article>
+
+                <article class="adventure-card">
+                    <img src="_Assets/Interior/River%20rocker.png"
+                        alt="River adventure">
+                    <h3>FOLLOW YOUR PATH</h3>
+                    <p>Find your next destination.</p>
+                </article>
+
+                <article class="adventure-card">
+                    <img src="_Assets/Interior/Sun%20set.png"
+                        alt="Sunset adventure">
+                    <h3>CHASE THE HORIZON</h3>
+                    <p>Every journey has a story.</p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- TECHNOLOGY -->
+        <section class="content-section" id="technology">
+
+            <div class="section-heading">
+                <p class="eyebrow">ENGINEERED FOR THE FUTURE</p>
+                <h2>INTELLIGENCE<br><span>IN EVERY DETAIL.</span></h2>
+            </div>
+
+            <div class="technology-gallery">
+
+                <article class="technology-card">
+                    <img src="_Assets/Technology/Blade_battery.jpg"
+                        alt="BYD Blade Battery technology">
+                    <h3>BLADE BATTERY</h3>
+                    <p>Discover BYD battery technology.</p>
+                </article>
+
+                <article class="technology-card">
+                    <img src="_Assets/Technology/BYD-e-platform-3-nav2.png"
+                        alt="BYD platform technology">
+                    <h3>ADVANCED PLATFORM</h3>
+                    <p>Explore the underlying technology.</p>
+                </article>
+
+                <article class="technology-card">
+                    <img src="_Assets/Technology/Tech.png"
+                        alt="BYD vehicle technology">
+                    <h3>SMART TECHNOLOGY</h3>
+                    <p>Innovation designed around driving.</p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- COLOUR STUDIO -->
+        <section class="colour-section" id="colours">
+
+            <div class="section-heading">
+                <p class="eyebrow">MAKE IT YOURS</p>
+                <h2>CHOOSE YOUR<br><span>SHARK 6.</span></h2>
+                <p>Explore the available vehicle colour options.</p>
+            </div>
+
+            <div class="vehicle-preview">
+                <img id="vehicleColourImage"
+                    src="_Assets/Colours/black-side.webp"
+                    alt="BYD SHARK 6 selected colour">
+            </div>
+
+            <div class="colour-options">
+                <button class="colour-choice active"
+                    data-image="_Assets/Colours/black-side.webp"
+                    data-colour="Black">BLACK</button>
+
+                <button class="colour-choice"
+                    data-image="_Assets/Colours/gray-side-.webp"
+                    data-colour="Grey">GREY</button>
+
+                <button class="colour-choice"
+                    data-image="_Assets/Colours/shark-green.webp"
+                    data-colour="Green">GREEN</button>
+
+                <button class="colour-choice"
+                    data-image="_Assets/Colours/white-side-.webp"
+                    data-colour="White">WHITE</button>
+            </div>
+
+            <p class="selected-colour" id="selectedColour">
+                SELECTED: BLACK
+            </p>
+
+        </section>
+
+
+        <footer class="site-footer">
+            <div class="brand">
+                <span class="brand-main">BYD</span>
+                <span class="brand-sub">SHARK 6</span>
+            </div>
+
+            <p>BUILT FOR THE UNEXPECTED.</p>
+
+            <small>
+                Independent concept demonstration.
+                Not an official BYD website.
+            </small>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11110F">
+    <title>SHARK 6 | Virtual Control Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lab.css">
+    <script src="lab.js" defer></script>
+</head>
+<body class="lab-page">
+<main class="lab-main">
+
+        <section class="lab-intro">
+            <div class="eyebrow"><span></span> DIGITAL VEHICLE EXPERIENCE</div>
+            <h1>YOUR SHARK.<br><span>YOUR COMMAND.</span></h1>
+            <p>Explore the technology and experience the controls of the BYD SHARK 6 in a virtual environment.</p>
+        </section>
+
+        <section class="vehicle-panel glass-panel">
+            <div class="panel-topline">
+                <div>
+                    <span class="section-kicker">01 / VEHICLE STATUS</span>
+                    <h2>Vehicle overview</h2>
+                </div>
+                <span class="vehicle-badge" id="vehicleStatus">POWER OFF</span>
+            </div>
+
+            <div class="vehicle-colour-picker">
+                <div class="colour-picker-heading">
+                    <div>
+                        <span class="section-kicker">CHOOSE YOUR SHARK</span>
+                        <h3>Select your vehicle colour</h3>
+                    </div>
+                    <span class="swipe-hint">SWIPE TO EXPLORE ↔</span>
+                </div>
+
+                <div class="colour-options" id="colourOptions">
+                    <button type="button" class="colour-option" data-vehicle-colour="black" aria-label="Select black vehicle">
+                        <span class="colour-swatch swatch-black"></span>
+                        <span>Black</span>
+                    </button>
+                    <button type="button" class="colour-option" data-vehicle-colour="grey" aria-label="Select grey vehicle">
+                        <span class="colour-swatch swatch-grey"></span>
+                        <span>Grey</span>
+                    </button>
+                    <button type="button" class="colour-option active" data-vehicle-colour="green" aria-label="Select green vehicle" aria-pressed="true">
+                        <span class="colour-swatch swatch-green"></span>
+                        <span>Green</span>
+                    </button>
+                    <button type="button" class="colour-option" data-vehicle-colour="white" aria-label="Select white vehicle">
+                        <span class="colour-swatch swatch-white"></span>
+                        <span>White</span>
+                    </button>
+                </div>
+            </div>
+            <div class="vehicle-visual" id="vehicleVisual">
+                <div class="vehicle-glow"></div>
+                <img id="vehicleImage" src="_Assets/Colours/shark-green.webp" alt="BYD SHARK 6 vehicle">
+                <div class="vehicle-caption">
+                    <span>BYD</span>
+                    <strong>SHARK 6</strong>
+                    <small>SUPER HYBRID · DMO</small>
+                </div>
+            </div>
+
+            <div class="vehicle-actions">
+
+                <button class="control-button secondary-control" id="lockButton" type="button">
+                    <span class="control-icon" id="lockIcon">▣</span>
+                    <span id="lockButtonText">LOCK VEHICLE</span>
+                </button>
+            </div>
+
+            <div class="status-grid">
+                <div class="status-card">
+                    <span class="status-label">POWER</span>
+                    <strong id="powerReadout">OFF</strong>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">GEAR</span>
+                    <strong id="gearReadout">P</strong>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">SPEED</span>
+                    <strong><span id="speedReadout">0</span> <small>km/h</small></strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="energy-section glass-panel" id="energyDashboard">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">02 / ENERGY MANAGEMENT</span>
+                    <h2>Power your journey.</h2>
+                    <p class="energy-subtitle">Hybrid energy levels and estimated driving range</p>
+                </div>
+                <span class="section-number">02</span>
+            </div>
+
+            <div class="energy-gauges">
+                <article class="energy-card">
+                    <div class="energy-card-heading">
+                        <span class="energy-icon">⛽</span>
+                        <div>
+                            <h3>Petrol</h3>
+                            <span>FUEL LEVEL</span>
+                        </div>
+                    </div>
+                    <div class="energy-meter">
+                        <div class="energy-meter-track">
+                            <span id="fuelGaugeFill" style="width:78%"></span>
+                        </div>
+                        <strong id="fuelPercent">78%</strong>
+                    </div>
+                    <div class="energy-range">
+                        <span>Estimated petrol range</span>
+                        <strong><span id="fuelRange">468</span> km</strong>
+                    </div>
+                </article>
+
+                <article class="energy-card">
+                    <div class="energy-card-heading">
+                        <span class="energy-icon">ϟ</span>
+                        <div>
+                            <h3>Battery</h3>
+                            <span>ELECTRIC POWER</span>
+                        </div>
+                    </div>
+                    <div class="energy-meter">
+                        <div class="energy-meter-track battery-track">
+                            <span id="batteryGaugeFill" style="width:86%"></span>
+                        </div>
+                        <strong id="batteryPercent">86%</strong>
+                    </div>
+                    <div class="energy-range">
+                        <span>Estimated electric range</span>
+                        <strong><span id="electricRange">86</span> km</strong>
+                    </div>
+                </article>
+            </div>
+
+            <div class="combined-range-card">
+                <div>
+                    <span class="section-kicker">TOTAL ESTIMATED RANGE</span>
+                    <p>Distance remaining</p>
+                </div>
+                <div class="combined-range-value">
+                    <strong id="combinedRange">554</strong>
+                    <span>KM</span>
+                </div>
+            </div>
+
+            <div class="trip-distance-card">
+                <div>
+                    <span class="section-kicker">CURRENT JOURNEY</span>
+                    <p>Simulated distance travelled</p>
+                </div>
+                <div class="trip-distance-value">
+                    <strong id="tripDistance">0.0</strong>
+                    <span>KM</span>
+                </div>
+            </div>
+            <p class="energy-disclaimer">
+                SIMULATION ONLY · Energy levels and range estimates are illustrative.
+                Actual range depends on driving conditions, terrain, speed and energy usage.
+            </p>
+        </section>
+
+        <section class="control-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">03 / CABIN COMFORT</span>
+                    <h2>Make yourself comfortable.</h2>
+                </div>
+                <span class="section-number">03</span>
+            </div>
+
+            <div class="comfort-grid">
+                <article class="control-tile glass-panel">
+                    <div class="tile-icon">❄</div>
+                    <div class="tile-copy">
+                        <h3>Climate control</h3>
+                        <p id="climateStatus">System is off</p>
+                    </div>
+                    <button class="toggle-switch" id="climateToggle" type="button" aria-label="Toggle climate control" aria-pressed="false"><span></span></button>
+                    <div class="temperature-control">
+                        <button type="button" id="tempDown" aria-label="Decrease temperature">−</button>
+                        <strong><span id="temperatureValue">22</span>°</strong>
+                        <button type="button" id="tempUp" aria-label="Increase temperature">+</button>
+                    </div>
+                </article>
+
+                <article class="control-tile glass-panel">
+                    <div class="tile-icon">♨</div>
+                    <div class="tile-copy">
+                        <h3>Seat heating</h3>
+                        <p id="seatStatus">Heating inactive</p>
+                    </div>
+                    <button class="toggle-switch" id="seatToggle" type="button" aria-label="Toggle seat heating" aria-pressed="false"><span></span></button>
+                    <div class="tile-footnote">DRIVER SEAT</div>
+                </article>
+
+                <article class="control-tile glass-panel">
+                    <div class="tile-icon">◫</div>
+                    <div class="tile-copy">
+                        <h3>Sunroof</h3>
+                        <p id="sunroofStatus">Closed</p>
+                    </div>
+                    <button class="toggle-switch" id="sunroofToggle" type="button" aria-label="Toggle sunroof" aria-pressed="false"><span></span></button>
+                    <div class="tile-footnote">PANORAMIC ROOF</div>
+                </article>
+            </div>
+        </section>
+
+        
+
+                <section class="ambient-section glass-panel" id="ambientLighting">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">04 / AMBIENT LED LIGHTING</span>
+                    <h2>Set the mood inside.</h2>
+                    <p class="energy-subtitle">Choose your cabin atmosphere</p>
+                </div>
+                <span class="section-number">04</span>
+            </div>
+
+            <div class="ambient-preview" id="ambientPreview">
+                <div class="ambient-cabin">
+                    <div class="cabin-window"></div>
+                    <div class="cabin-dashboard"></div>
+                    <div class="cabin-seat cabin-seat-left"></div>
+                    <div class="cabin-seat cabin-seat-right"></div>
+                    <div class="ambient-light-strip"></div>
+                    <div class="ambient-footwell ambient-footwell-left"></div>
+                    <div class="ambient-footwell ambient-footwell-right"></div>
+                </div>
+                <div class="ambient-preview-caption">
+                    <span>SHARK 6 CABIN LIGHTING</span>
+                    <strong id="ambientColourName">Warm Gold</strong>
+                </div>
+            </div>
+
+            <div class="ambient-slider-panel">
+                <div class="ambient-slider-heading">
+                    <div>
+                        <span class="section-kicker">COLOUR CONTROL</span>
+                        <h3>Choose your LED colour</h3>
+                    </div>
+                    <span class="ambient-colour-value" id="ambientColourValue">35°</span>
+                </div>
+                <input type="range" class="ambient-colour-slider"
+                    id="ambientColourSlider" min="0" max="360"
+                    value="35" step="1" aria-label="Choose ambient LED colour">
+                <div class="ambient-slider-labels">
+                    <span>Warm</span>
+                    <span>Cool</span>
+                    <span>Vibrant</span>
+                    <span>Full spectrum</span>
+                </div>
+                <p class="ambient-note">Drag the slider to change the simulated cabin lighting colour.</p>
+            </div>
+        </section>
+<section class="control-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">05 / VEHICLE LIGHTING</span>
+                    <h2>Stay visible.</h2>
+                </div>
+                <span class="section-number">05</span>
+            </div>
+
+            <div class="lighting-panel glass-panel">
+                <div class="lighting-status">
+                    <span class="status-label">SIGNAL STATUS</span>
+                    <strong id="signalStatus">ALL SIGNALS OFF</strong>
+                </div>
+                <div class="signal-controls">
+                    <button class="signal-button" id="leftSignal" type="button" aria-pressed="false">
+                        <span>←</span> LEFT
+                    </button>
+                    <button class="signal-button hazard-button" id="hazardSignal" type="button" aria-pressed="false">
+                        <span>⚠</span> HAZARDS
+                    </button>
+                    <button class="signal-button" id="rightSignal" type="button" aria-pressed="false">
+                        RIGHT <span>→</span>
+                    </button>
+                </div>
+                <div class="signal-lights">
+                    <span id="leftLamp"></span>
+                    <span id="rightLamp"></span>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="control-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">06 / DRIVE EXPERIENCE</span>
+                    <h2>Feel the response.</h2>
+                </div>
+                <span class="section-number">06</span>
+            </div>
+
+            <div class="drive-panel glass-panel">
+                <div class="drive-readout">
+                    <span class="status-label">SIMULATED SPEED</span>
+                    <div class="speed-display"><strong id="driveSpeed">0</strong><span>km/h</span></div>
+                    <div class="speed-track"><span id="speedBar"></span></div>
+                    <p id="driveMessage">Vehicle is stationary</p>
+                </div>
+                <div class="drive-controls">
+                    <button class="drive-button start-drive-button" id="powerButton" type="button">
+                        <span>⏻</span>
+                        <span id="powerButtonText">START VEHICLE</span>
+                    </button>
+                    <button class="drive-button accelerate-button" id="accelerateButton" type="button">
+                        <span>＋</span>
+                        ACCELERATE
+                    </button>
+                    <button class="drive-button brake-button" id="brakeButton" type="button">
+                        <span>−</span>
+                        BRAKE
+                    </button>
+                </div>
+                <p class="simulation-note">Virtual driving controls only. No real vehicle movement occurs.</p>
+            </div>
+        </section>
+
+        
+
+        <section class="control-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">07 / PARKING TECHNOLOGY</span>
+                    <h2>Park with confidence.</h2>
+                </div>
+                <span class="section-number">07</span>
+            </div>
+
+            <div class="parking-panel glass-panel">
+                <div class="parking-visual">
+                    <div class="parking-label">360° SURROUND VIEW · SIMULATED</div>
+                    <div class="parking-sensor sensor-top"></div>
+                    <div class="parking-sensor sensor-bottom"></div>
+                    <div class="parking-sensor sensor-left"></div>
+                    <div class="parking-sensor sensor-right"></div>
+                    <div class="parking-car">
+                        <img src="_Assets/Colours/shark-green.webp" alt="Top view vehicle illustration">
+                    </div>
+                    <div class="parking-distance" id="parkingDistance">SCANNING AREA</div>
+                </div>
+                <div class="parking-info">
+                    <div>
+                        <h3>Parking assistant</h3>
+                        <p id="parkingStatus">Ready to begin a virtual parking scan.</p>
+                    </div>
+                    <button class="control-button primary-control" id="parkingButton" type="button">
+                        <span>⌖</span> START PARKING ASSIST
+                    </button>
+                </div>
+                <p class="simulation-note">This is a visual demonstration, not a live camera or obstacle-detection system.</p>
+            </div>
+        </section>
+
+        <section class="lab-disclaimer">
+            <span>ⓘ</span>
+            <p><strong>Concept demonstration only.</strong> This virtual Lab does not connect to, communicate with, or control a real BYD vehicle. All controls and readings are simulated.</p>
+        </section>
+
+    </main>
+
+    <nav class="floating-dock" aria-label="Main navigation">
+
+    <a href="index.html#home" class="dock-item" aria-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>
+        </svg>
+        <span>Home</span>
+    </a><a href="index.html#colours" class="dock-item" aria-label="Colours">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.5-3.3 1.8 1.8 0 0 1 1.4-3h1.1A3.8 3.8 0 0 0 21 10.9C21 6.5 17 3 12 3Z"/>
+            <circle cx="7.5" cy="10" r="1"/>
+            <circle cx="10" cy="6.8" r="1"/>
+            <circle cx="14.5" cy="7" r="1"/>
+        </svg>
+        <span>Colours</span>
+    </a>
+
+    <a href="index.html#technology" class="dock-item" aria-label="Details">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 13.5 5 8h14l2 5.5V19h-2v-2H5v2H3z"/>
+            <path d="M5 13.5h14M7 8l1-3h8l1 3"/>
+            <circle cx="7" cy="14" r="1"/>
+            <circle cx="17" cy="14" r="1"/>
+        </svg>
+        <span>Details</span>
+    </a>
+
+    <a href="lab.html" class="dock-item active" aria-label="Lab" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 3h6"/>
+            <path d="M10 3v6l-5.5 9.2A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.8L14 9V3"/>
+            <path d="M7.5 15h9"/>
+            <circle cx="10" cy="17.5" r=".7" fill="currentColor"/>
+            <circle cx="14" cy="13" r=".7" fill="currentColor"/>
+        </svg>
+        <span>Lab</span>
+    </a>
+
+    <button id="themeToggle" class="dock-theme" type="button" aria-label="Toggle light and dark theme">
+        ◐
+    </button>
+
+</nav>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
